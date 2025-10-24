@@ -281,7 +281,8 @@
                 Background="{StaticResource PrimaryColor}" 
                 Foreground="White" 
                 Click="btnIniciarSesion_Click" Margin="57,22,39,142" Grid.Row="4"/>
-            <TextBlock Text="Bienvenido nombre" 
+            
+            <TextBlock x:Name="txtBienvenida" 
                 FontSize="28" 
                 FontWeight="Light" 
                 Foreground="White" 

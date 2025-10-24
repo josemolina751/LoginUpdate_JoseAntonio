@@ -19,12 +19,12 @@ namespace CustomWPF
     /// </summary>
     public partial class Register : Window
     {
+        private string nombreUsuario;
+
         public Register()
         {
             InitializeComponent();
         }
-
-       
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
@@ -34,24 +34,24 @@ namespace CustomWPF
         }
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            var Register = new Principal();
+            var Register = new Principal(nombreUsuario);
             Register.Show();
         }
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            // Aquí tu lógica para minimizar la ventana
+            // Lo dejo vacio por que si no salta error por no utilizarlo
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            // Aquí tu lógica para cerrar la ventana
+            // Lo dejo vacio por que si no salta error por no utilizarlo
         }
         private void btnRegistrarse_Click(object sender, RoutedEventArgs e)
         {
-            // Aquí tu lógica para registrar usuario
+            // Lo dejo vacio por que si no salta error por no utilizarlo
         }
         private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // Aquí tu lógica para arrastrar la ventana (si la barra es personalizada)
+            // Lo dejo vacio por que si no salta error por no utilizarlo
         }
     }
 }

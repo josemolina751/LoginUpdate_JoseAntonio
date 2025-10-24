@@ -29,8 +29,11 @@ namespace CustomWPF
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
 
-            var MainWindow = new Principal();
-            MainWindow.Show();
+            
+            string nombreUsuario = txtUsuario.Text;
+            var principal = new Principal(nombreUsuario);
+            principal.Show();
+            this.Close();
             // Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
@@ -68,15 +71,6 @@ namespace CustomWPF
             MainWindow.Show();
 
         }
-
-
-
-
-        
-
-        
-
-        
 
         // Manejadores de eventos para los botones de ventana
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
