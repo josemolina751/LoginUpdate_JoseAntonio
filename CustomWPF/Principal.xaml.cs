@@ -15,27 +15,26 @@ using System.Windows.Shapes;
 namespace CustomWPF
 {
     /// <summary>
-    /// Lógica de interacción para Register.xaml
+    /// Lógica de interacción para Principal.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class Principal : Window
     {
-        public Register()
+        public Principal()
         {
             InitializeComponent();
         }
 
-       
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            var Register= new MainWindow();
-            Register.Show();
-           
+            var Principal = new MainWindow();
+            Principal.Show();
+
         }
+
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            var Register = new Principal();
-            Register.Show();
+            // Aquí tu lógica de botón
         }
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
@@ -53,5 +52,7 @@ namespace CustomWPF
         {
             // Aquí tu lógica para arrastrar la ventana (si la barra es personalizada)
         }
+
+
     }
 }

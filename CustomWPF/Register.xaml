@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomWPF"
         mc:Ignorable="d"
-        Title="Register" Height="519" Width="347">
+        Title="Register" Height="750" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <Window.Resources>
         <!-- Material Design Colors -->
         <SolidColorBrush x:Key="PrimaryColor" Color="Black"/>
@@ -29,12 +30,12 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Border Background="{TemplateBinding Background}"
-                             BorderBrush="{TemplateBinding BorderBrush}"
-                             BorderThickness="{TemplateBinding BorderThickness}"
-                             CornerRadius="4,4,0,0">
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4,4,0,0">
                             <ScrollViewer x:Name="PART_ContentHost" 
-                                      Padding="{TemplateBinding Padding}"
-                                      VerticalAlignment="Bottom"/>
+                                         Padding="{TemplateBinding Padding}"
+                                         VerticalAlignment="Bottom"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True">
@@ -60,12 +61,12 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="PasswordBox">
                         <Border Background="{TemplateBinding Background}"
-                             BorderBrush="{TemplateBinding BorderBrush}"
-                             BorderThickness="{TemplateBinding BorderThickness}"
-                             CornerRadius="4,4,0,0">
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4,4,0,0">
                             <ScrollViewer x:Name="PART_ContentHost" 
-                                      Padding="{TemplateBinding Padding}"
-                                      VerticalAlignment="Bottom"/>
+                                         Padding="{TemplateBinding Padding}"
+                                         VerticalAlignment="Bottom"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True">
@@ -88,9 +89,9 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="Border" 
-                             Background="{TemplateBinding Background}"
-                             CornerRadius="4"
-                             BorderThickness="0">
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="4"
+                                BorderThickness="0">
                             <Border.Effect>
                                 <DropShadowEffect Color="Black" Direction="270" ShadowDepth="2" Opacity="0.3" BlurRadius="4"/>
                             </Border.Effect>
@@ -129,10 +130,10 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="Border" 
-                             Background="{TemplateBinding Background}"
-                             BorderBrush="{TemplateBinding BorderBrush}"
-                             BorderThickness="{TemplateBinding BorderThickness}"
-                             CornerRadius="4">
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -201,82 +202,67 @@
 
 
     <!-- Main Card Container -->
-    <Border CornerRadius="8" Margin="24,24,10,6">
+    <Border Background="{StaticResource BackgroundColor}" CornerRadius="8" Margin="24">
         <Border.Effect>
             <DropShadowEffect Color="Black" Direction="270" ShadowDepth="8" Opacity="0.2" BlurRadius="16"/>
         </Border.Effect>
 
-        <Grid Background="{StaticResource SurfaceColor}" Margin="-10,-10,10,10">
+        <Grid Background="{StaticResource SurfaceColor}" Margin="0,-36,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="120"/>
-                <RowDefinition/>
-                <RowDefinition Height="193.04"/>
+                <RowDefinition Height="188*"/>
+                <RowDefinition Height="247*"/>
+                <RowDefinition Height="153"/>
             </Grid.RowDefinitions>
 
-            <!-- Title Bar -->
-            <Grid Background="{StaticResource PrimaryColor}" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Margin="-10,-24,-9,108" Grid.RowSpan="2">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <Button x:Name="btnMinimize" 
-                        Style="{StaticResource WindowButton}"
-                        Content="&#xE921;" 
-                        Click="btnMinimize_Click" 
-                        ToolTip="Minimizar"/>
-                    <Button x:Name="btnClose" 
-                        Style="{StaticResource CloseButton}"
-                        Content="&#xE8BB;" 
-                        Click="btnClose_Click" 
-                        ToolTip="Cerrar"/>
-                </StackPanel>
-            </Grid>
+
 
 
 
             <!-- Header -->
-            <Grid Grid.Row="1" Background="{StaticResource PrimaryColor}" Margin="0,0,0,120">
+            <Grid Background="{StaticResource PrimaryColor}" Margin="0,-2,0,0" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="209*"/>
                     <ColumnDefinition Width="193*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="123,0,0,0">
-                    <TextBlock Text="Bienvenido" 
-                           FontSize="28" 
-                           FontWeight="Light" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,0,0,4"/>
-                    <TextBlock Text="Inicia sesión en tu cuenta" 
-                           FontSize="14" 
-                           Foreground="#FF88887C" 
-                           HorizontalAlignment="Center"/>
+                    <TextBlock Text="Registrate" 
+                              FontSize="28" 
+                              FontWeight="Light" 
+                              Foreground="White" 
+                              Width="177"/>
+                    <TextBlock Text="Registrate para acceder a la página" 
+                              FontSize="14" 
+                              Foreground="#FF88887C" 
+                              Width="229" Height="18" HorizontalAlignment="Right"/>
                 </StackPanel>
-                <Image Width="200" Source="/Image/pearphoto.png" RenderTransformOrigin="0.485,1.1" Height="50" Grid.ColumnSpan="2" Margin="101,-18,101,102"/>
+                <Image Width="200" Source="/Image/pearphoto.png" RenderTransformOrigin="0.485,1.1" Height="50" Grid.ColumnSpan="2" Margin="101,0,101,101"/>
             </Grid>
 
             <!-- Form Content -->
-            <StackPanel Grid.Row="1" Margin="48,70,48,0" VerticalAlignment="Top" Height="217" Grid.RowSpan="3">
+            <StackPanel Grid.Row="2" Margin="48,79,48,0" VerticalAlignment="Top" Grid.RowSpan="2" Height="336">
                 <!-- Usuario -->
                 <Grid Margin="0,0,0,24">
-                    <TextBox x:Name="txtUsuario" 
-                          Style="{StaticResource MaterialTextBox}"
-                          Background="#FAFAFA"/>
+                    <TextBox x:Name="txtUsuarioNuevo" 
+                             Style="{StaticResource MaterialTextBox}"
+                             Background="#FAFAFA"/>
                     <TextBlock Text="Usuario" 
-                           FontSize="12" 
-                           Foreground="{StaticResource OnSurfaceMediumColor}" 
-                           Margin="0,4,12,4" 
-                           IsHitTestVisible="False"/>
+                              FontSize="12" 
+                              Foreground="{StaticResource OnSurfaceMediumColor}" 
+                              Margin="12,8,0,0" 
+                              IsHitTestVisible="False"/>
                 </Grid>
-
-
+                <!-- Mail -->
                 <Grid Margin="0,0,0,24">
                     <TextBox x:Name="txtEmail" 
-          Style="{StaticResource MaterialTextBox}"
-          Background="#FAFAFA"/>
-                    <TextBlock Text="Usuario" 
-           FontSize="12" 
-           Foreground="{StaticResource OnSurfaceMediumColor}" 
-           Margin="2,4,10,4" 
-           IsHitTestVisible="False"/>
+             Style="{StaticResource MaterialTextBox}"
+             Background="#FAFAFA"/>
+                    <TextBlock Text="Mail" 
+              FontSize="12" 
+              Foreground="{StaticResource OnSurfaceMediumColor}" 
+              Margin="12,8,0,0" 
+              IsHitTestVisible="False"/>
                 </Grid>
 
                 <!-- Contraseña -->
@@ -285,57 +271,52 @@
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
-                    <PasswordBox x:Name="txtContrasena" 
-                             Style="{StaticResource MaterialPasswordBox}"
-                             Background="#FAFAFA" Grid.ColumnSpan="2"/>
+                    <PasswordBox x:Name="txtContrasenaRegistro" 
+                                Style="{StaticResource MaterialPasswordBox}"
+                                Background="#FAFAFA" Grid.ColumnSpan="2"/>
                     <TextBlock Text="Contraseña" 
-                           FontSize="12" 
-                           Foreground="{StaticResource OnSurfaceMediumColor}" 
-                           Margin="0,0,26,8" 
-                           IsHitTestVisible="False" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="191"/>
-                    <TextBlock Text="Contraseña" 
-                        FontSize="12" 
-                        Foreground="{StaticResource OnSurfaceMediumColor}" 
-                        Margin="0,72,12,-64" 
-                        IsHitTestVisible="False" Grid.ColumnSpan="2"/>
-                    <TextBlock Text="Contraseña" 
-                        FontSize="12" 
-                        Foreground="{StaticResource OnSurfaceMediumColor}" 
-                        Margin="0,85,12,-77" 
-                        IsHitTestVisible="False" Grid.ColumnSpan="2"/>
+                              FontSize="12" 
+                              Foreground="{StaticResource OnSurfaceMediumColor}" 
+                              Margin="12,8,0,0" 
+                              IsHitTestVisible="False" Grid.ColumnSpan="2"/>
                 </Grid>
-                <!-- Contraseña -->
+
+                <!-- Repetir Contraseña -->
+                <Grid Margin="0,0,0,32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <PasswordBox x:Name="txtRepetirContrasena" 
+                Style="{StaticResource MaterialPasswordBox}"
+                Background="#FAFAFA" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="Repetir Contraseña" 
+              FontSize="12" 
+              Foreground="{StaticResource OnSurfaceMediumColor}" 
+              Margin="12,8,0,0" 
+              IsHitTestVisible="False" Grid.ColumnSpan="2"/>
+                </Grid>
 
 
-                <!-- Términos y Condiciones -->
-                <CheckBox x:Name="chkTerminos" 
-                      FontSize="14" 
-                      Foreground="{StaticResource OnSurfaceColor}"
-                      Margin="0,0,0,32" 
-                      VerticalContentAlignment="Center" Checked="chkTerminos_Checked">
-                    <TextBlock Width="260" VerticalAlignment="Top">
-                     <Run Text="Acepto los "/>
-                     <Run Text="términos y condiciones" Foreground="{StaticResource PrimaryColor}" TextDecorations="Underline" Cursor="Hand"/>
-                    </TextBlock>
-                </CheckBox>
             </StackPanel>
 
             <!-- Buttons -->
-            <Grid>
-                <StackPanel/>
-            </Grid>
-            <TextBlock Text="Introduce de nuevo la contraseña" 
-                        x:Name="txtRepetirContrasena"
-                FontSize="12" 
-                Foreground="{StaticResource OnSurfaceMediumColor}" 
-                Margin="48,48,0,96" 
-                IsHitTestVisible="False" HorizontalAlignment="Left" Width="191" Grid.Row="3"/>
-            <Button Content="Button" HorizontalAlignment="Left" Height="27" Margin="104,99,0,0" Grid.Row="3" VerticalAlignment="Top" Width="122"/>
-            <Button Content="Button" HorizontalAlignment="Center" Height="36" Margin="0,138,0,0" Grid.Row="3" VerticalAlignment="Top" Width="106"/>
-            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="40" Margin="10,73,0,0" Grid.Row="3" VerticalAlignment="Top" Width="204"/>
+            <StackPanel Grid.Row="4" Margin="48,0,48,0" VerticalAlignment="Center" Height="88">
+                <Button x:Name="btnEntrar" 
+                       Content="REGISTRATE" 
+                       Style="{StaticResource MaterialButton}"
+                       Background="{StaticResource PrimaryColor}" 
+                       Foreground="White" 
+                       Margin="0,0,0,16" 
+                       Click="btnEntrar_Click"/>
+                <Button x:Name="btnIniciarSesion" 
+                       Content="¿Tienes cuenta? INICIA SESIÓN" 
+                       Style="{StaticResource MaterialOutlinedButton}"
+                       Foreground="{StaticResource PrimaryColor}" 
+                       BorderBrush="{StaticResource PrimaryColor}" 
+                       Click="btnIniciarSesion_Click"/>
+            </StackPanel>
+            <CheckBox Content="Acepto los Términos y Condiones" HorizontalAlignment="Left" Height="20" Margin="48,217,0,0" Grid.Row="3" VerticalAlignment="Top" Width="213" RenderTransformOrigin="0.586,-0.234"/>
         </Grid>
     </Border>
-
-
-
 </Window>

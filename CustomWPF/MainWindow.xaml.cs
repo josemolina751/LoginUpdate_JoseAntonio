@@ -25,8 +25,12 @@ namespace CustomWPF
             InitializeComponent();
         }
 
+
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
+
+            var MainWindow = new Principal();
+            MainWindow.Show();
             // Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
@@ -53,13 +57,26 @@ namespace CustomWPF
             string contrasena = txtContrasena.Password;
 
             MessageBox.Show($"Bienvenido, {usuario}!", "Login Exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+
         }
+
 
         private void btnRegistrarse_Click(object sender, RoutedEventArgs e)
         {
-            // Aquí iría la lógica para abrir el formulario de registro
-            MessageBox.Show("Funcionalidad de registro no implementada aún.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            var MainWindow = new Register();
+            MainWindow.Show();
+
         }
+
+
+
+
+        
+
+        
+
+        
 
         // Manejadores de eventos para los botones de ventana
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -84,5 +101,7 @@ namespace CustomWPF
         {
 
         }
+
+
     }
 }
