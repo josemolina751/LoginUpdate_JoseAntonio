@@ -48,6 +48,7 @@
             </Setter>
         </Style>
 
+
         <!-- Material Design PasswordBox Style -->
         <Style x:Key="MaterialPasswordBox" TargetType="PasswordBox">
             <Setter Property="Height" Value="56"/>
@@ -245,7 +246,7 @@
                 <TextBlock Text="Selecciona una opción" 
                     FontSize="14" 
                     Foreground="#FF88887C" 
-                              Margin="132,67,132,48" Grid.ColumnSpan="2" 
+                              Margin="142,67,122,48" Grid.ColumnSpan="2"
                               />
             </Grid>
 
@@ -257,36 +258,59 @@
 
             <!-- Buttons -->
             <StackPanel Grid.Row="4" Margin="48,46,48,0" VerticalAlignment="Top"/>
+            <DataGrid x:Name="dataGridSocios"
+                      
+          AutoGenerateColumns="False"
+          Margin="57,86,39,24"
+          Grid.Row="4"
+          Background="White"
+          Foreground="Black"
+          FontFamily="Bahnschrift"
+          SelectionMode="Single"
+          CanUserAddRows="False"
+          HeadersVisibility="Column"
+          Height="Auto"
+          VerticalAlignment="Top"
+          Visibility="Collapsed"
+          >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="Auto"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
             <Button x:Name="btnEntrar_Copiar" 
                 Content="NUEVO" 
                 Style="{StaticResource MaterialButton}"
                 Background="{StaticResource PrimaryColor}" 
                 Foreground="White" 
-                Click="btnEntrar_Click" Margin="57,135,39,0" Grid.Row="2"/>
+                Click="btnNuevo_Click" Margin="57,135,39,0" Grid.Row="2"/>
             <Button x:Name="btnEntrar_Copiar1" 
                 Content="ACTUALIZAR" 
                 Style="{StaticResource MaterialButton}"
                 Background="{StaticResource PrimaryColor}" 
                 Foreground="White" 
-                Click="btnEntrar_Click" Margin="57,42,39,103" Grid.Row="3"/>
+                Click="btnEditar_Click" Margin="57,42,39,103" Grid.Row="3"/>
             <Button x:Name="btnEntrar_Copiar2" 
                 Content="BORRAR" 
                 Style="{StaticResource MaterialButton}"
                 Background="{StaticResource PrimaryColor}" 
                 Foreground="White" 
-                Click="btnEntrar_Click" Margin="57,121,39,24" Grid.Row="3"/>
+                Click="btnEliminar_Click" Margin="57,121,39,24" Grid.Row="3"/>
             <Button x:Name="salir" 
                 Content="SALIR" 
                 Style="{StaticResource MaterialButton}"
                 Background="{StaticResource PrimaryColor}" 
                 Foreground="White" 
                 Click="btnIniciarSesion_Click" Margin="57,22,39,142" Grid.Row="4"/>
-            
+
             <TextBlock x:Name="txtBienvenida" 
                 FontSize="28" 
                 FontWeight="Light" 
                 Foreground="White" 
-                              Margin="86,23,86,60" Grid.Row="1"/>
+                              Margin="95,23,77,60" Grid.Row="1"/>
         </Grid>
+
     </Border>
 </Window>

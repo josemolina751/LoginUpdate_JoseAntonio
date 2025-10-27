@@ -19,7 +19,7 @@ namespace CustomWPF
     /// </summary>
     public partial class Register : Window
     {
-        private string nombreUsuario;
+        
 
         public Register()
         {
@@ -34,9 +34,14 @@ namespace CustomWPF
         }
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            var Register = new Principal(nombreUsuario);
-            Register.Show();
+            // Obtén el texto del TextBox de usuario
+            string nombreUsuario = txtUsuarioNuevo.Text;
+
+            var principal = new Principal(nombreUsuario);
+            principal.Show();
+            this.Close();
         }
+
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             // Lo dejo vacio por que si no salta error por no utilizarlo

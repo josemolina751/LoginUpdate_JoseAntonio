@@ -32,8 +32,7 @@ namespace CustomWPF
             
             string nombreUsuario = txtUsuario.Text;
             var principal = new Principal(nombreUsuario);
-            principal.Show();
-            this.Close();
+            
             // Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
@@ -60,6 +59,8 @@ namespace CustomWPF
             string contrasena = txtContrasena.Password;
 
             MessageBox.Show($"Bienvenido, {usuario}!", "Login Exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+            principal.Show();
+            this.Close();
 
         }
 
@@ -95,7 +96,6 @@ namespace CustomWPF
         {
 
         }
-
 
     }
 }
