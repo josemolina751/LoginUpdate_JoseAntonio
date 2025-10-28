@@ -78,7 +78,11 @@ namespace CustomWPF
 
             }
         }
+        private void btnCerrar(object sender, RoutedEventArgs e)
+        {
 
+            this.Close();
+        }
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             Socio seleccionado = (Socio)dataGridSocios.SelectedItem;

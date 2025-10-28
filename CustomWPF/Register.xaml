@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomWPF"
         mc:Ignorable="d"
-        Title="Register" Height="750" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Title="Register" Height="722" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <Window.Resources>
         <!-- Material Design Colors -->
@@ -202,7 +202,7 @@
 
 
     <!-- Main Card Container -->
-    <Border Background="{StaticResource BackgroundColor}" CornerRadius="8" Margin="24">
+    <Border Background="{StaticResource BackgroundColor}" CornerRadius="8" Margin="24,24,10,0">
         <Border.Effect>
             <DropShadowEffect Color="Black" Direction="270" ShadowDepth="8" Opacity="0.2" BlurRadius="16"/>
         </Border.Effect>
@@ -211,8 +211,10 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="120"/>
-                <RowDefinition Height="188*"/>
-                <RowDefinition Height="247*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="136*"/>
+                <RowDefinition Height="244*"/>
                 <RowDefinition Height="153"/>
             </Grid.RowDefinitions>
 
@@ -241,7 +243,7 @@
             </Grid>
 
             <!-- Form Content -->
-            <StackPanel Grid.Row="2" Margin="48,79,48,0" VerticalAlignment="Top" Grid.RowSpan="2" Height="336">
+            <StackPanel Grid.Row="4" Margin="48,29,48,0" VerticalAlignment="Top" Grid.RowSpan="2" Height="336">
                 <!-- Usuario -->
                 <Grid Margin="0,0,0,24">
                     <TextBox x:Name="txtUsuarioNuevo" 
@@ -298,10 +300,23 @@
                 </Grid>
 
 
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="328,0,0,0">
+                <Button x:Name="btnMinimize" 
+           Style="{StaticResource WindowButton}"
+           Content="&#xE921;" 
+           Click="btnMinimize_Click" 
+           ToolTip="Minimizar"/>
+                <Button x:Name="btnClose" 
+           Style="{StaticResource CloseButton}"
+           Content="&#xE8BB;" 
+           Click="btnCerrar" 
+           ToolTip="Cerrar"/>
             </StackPanel>
 
             <!-- Buttons -->
-            <StackPanel Grid.Row="4" Margin="48,0,48,0" VerticalAlignment="Center" Height="88">
+            <StackPanel Grid.Row="6" Margin="48,0,48,0" VerticalAlignment="Center" Height="88">
                 <Button x:Name="btnEntrar" 
                        Content="REGISTRATE" 
                        Style="{StaticResource MaterialButton}"
@@ -316,7 +331,7 @@
                        BorderBrush="{StaticResource PrimaryColor}" 
                        Click="btnIniciarSesion_Click"/>
             </StackPanel>
-            <CheckBox Content="Acepto los Términos y Condiones" HorizontalAlignment="Left" Height="20" Margin="48,217,0,0" Grid.Row="3" VerticalAlignment="Top" Width="213" RenderTransformOrigin="0.586,-0.234"/>
+            <CheckBox x:Name="chkTerminos" Content="Acepto los Términos y Condiones" HorizontalAlignment="Left" Height="20" Margin="48,217,0,0" Grid.Row="5" VerticalAlignment="Top" Width="213" RenderTransformOrigin="0.586,-0.234"/>
         </Grid>
     </Border>
 </Window>

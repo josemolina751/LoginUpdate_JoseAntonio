@@ -227,7 +227,7 @@
                     <Button x:Name="btnClose" 
                            Style="{StaticResource CloseButton}"
                            Content="&#xE8BB;" 
-                           Click="btnClose_Click" 
+                           Click="btnCerrar" 
                            ToolTip="Cerrar"/>
                 </StackPanel>
             </Grid>

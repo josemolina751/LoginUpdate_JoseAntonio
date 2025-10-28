@@ -26,6 +26,8 @@ namespace CustomWPF
             InitializeComponent();
         }
 
+        
+
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
             var Register= new MainWindow();
@@ -35,10 +37,56 @@ namespace CustomWPF
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
             // Obtén el texto del TextBox de usuario
+
             string nombreUsuario = txtUsuarioNuevo.Text;
 
             var principal = new Principal(nombreUsuario);
+
+             if (string.IsNullOrWhiteSpace(txtUsuarioNuevo.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un usuario.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                txtUsuarioNuevo.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un mail válido.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtContrasenaRegistro.Password))
+            {
+                MessageBox.Show("Por favor, ingrese una contraseña.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                txtContrasenaRegistro.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtRepetirContrasena.Password))
+            {
+                MessageBox.Show("Por favor, confirme la contraseña", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!chkTerminos.IsChecked == true)
+            {
+                MessageBox.Show("Debe aceptar los términos y condiciones.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Aquí iría la lógica de autenticación
+            string usuario = txtUsuarioNuevo.Text;
+            string contrasena = txtContrasenaRegistro.Password;
+
+            MessageBox.Show($"Bienvenido, {usuario}!", "Registro Exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
             principal.Show();
+            this.Close();
+            principal.Show();
+            this.Close();
+        }
+        private void btnCerrar(object sender, RoutedEventArgs e)
+        {
+
             this.Close();
         }
 

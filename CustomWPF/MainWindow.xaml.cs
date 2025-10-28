@@ -81,6 +81,14 @@ namespace CustomWPF
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
+
+           
+            this.Close();
+        }
+
+        private void btnCerrar(object sender, RoutedEventArgs e)
+        {
+
             this.Close();
         }
 
