@@ -33,7 +33,7 @@ namespace CustomWPF
             string nombreUsuario = txtUsuario.Text;
             var principal = new Principal(nombreUsuario);
             
-            // Validar que los campos no estén vacíos
+            
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
                 MessageBox.Show("Por favor, ingrese un usuario.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -54,7 +54,7 @@ namespace CustomWPF
                 return;
             }
 
-            // Aquí iría la lógica de autenticación
+            
             string usuario = txtUsuario.Text;
             string contrasena = txtContrasena.Password;
 
@@ -70,10 +70,11 @@ namespace CustomWPF
 
             var MainWindow = new Register();
             MainWindow.Show();
+            this.Close();
 
         }
 
-        // Manejadores de eventos para los botones de ventana
+        
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
@@ -82,7 +83,6 @@ namespace CustomWPF
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
 
-           
             this.Close();
         }
 

@@ -36,17 +36,17 @@ namespace CustomWPF
         }
         private void btnNuevo_Click(object sender, RoutedEventArgs e)
         {
-            // Creamos el formulario en modo NUEVO (ID editable)
+            
             var ventana = new NuevoSocio(new Socio(), false);
             if (ventana.ShowDialog() == true)
             {
-                socios.Add(ventana.NuevoSocioUsuario);       // Agregamos el nuevo socio a la lista
-                dataGridSocios.ItemsSource = null;           // Refrescamos la grilla
+                socios.Add(ventana.NuevoSocioUsuario);       
+                dataGridSocios.ItemsSource = null;           
                 dataGridSocios.ItemsSource = socios;
                 dataGridSocios.ItemsSource = null;
                 dataGridSocios.ItemsSource = socios;
 
-                // Para mostrar u ocultar según haya socios:
+                
                 dataGridSocios.Visibility = socios.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
 
             }
@@ -60,9 +60,9 @@ namespace CustomWPF
                 MessageBox.Show("Selecciona un socio de la lista para editar.");
                 return;
             }
-            // Pasamos una copia del socio seleccionado al formulario de edición
+            
             var copia = new Socio { ID = seleccionado.ID, Nombre = seleccionado.Nombre, Email = seleccionado.Email };
-            var ventana = new NuevoSocio(copia, true); // true = modo edición (ID no editable)
+            var ventana = new NuevoSocio(copia, true); 
             if (ventana.ShowDialog() == true)
             {
                 seleccionado.Nombre = ventana.NuevoSocioUsuario.Nombre;
@@ -72,7 +72,7 @@ namespace CustomWPF
                 dataGridSocios.ItemsSource = null;
                 dataGridSocios.ItemsSource = socios;
 
-                // Para mostrar u ocultar según haya socios:
+                // Esto es para mostrar u ocultar según haya socios:
                 dataGridSocios.Visibility = socios.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
 
 
@@ -92,12 +92,12 @@ namespace CustomWPF
                 return;
             }
             socios.Remove(seleccionado);
-            dataGridSocios.ItemsSource = null;   // Refrescamos
+            dataGridSocios.ItemsSource = null;   
             dataGridSocios.ItemsSource = socios;
             dataGridSocios.ItemsSource = null;
             dataGridSocios.ItemsSource = socios;
 
-            // Para mostrar u ocultar según haya socios:
+            
             dataGridSocios.Visibility = socios.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
 
         }

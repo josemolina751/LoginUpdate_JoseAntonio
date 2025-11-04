@@ -27,16 +27,17 @@ namespace CustomWPF
         }
 
         
-
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
             var Register= new MainWindow();
             Register.Show();
-           
+            this.Close();
+
         }
+
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            // Obtén el texto del TextBox de usuario
+            
 
             string nombreUsuario = txtUsuarioNuevo.Text;
 
@@ -74,7 +75,7 @@ namespace CustomWPF
                 return;
             }
 
-            // Aquí iría la lógica de autenticación
+            
             string usuario = txtUsuarioNuevo.Text;
             string contrasena = txtContrasenaRegistro.Password;
 

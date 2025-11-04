@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Login" Height="750" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    
     <Window.Resources>
         <!-- Material Design Colors -->
         <SolidColorBrush x:Key="PrimaryColor" Color="Black"/>
@@ -201,7 +202,6 @@
     </Window.Resources>
 
 
-
     <!-- Main Card Container -->
     <Border Background="{StaticResource BackgroundColor}" CornerRadius="8" Margin="24">
         <Border.Effect>
@@ -244,11 +244,11 @@
                     <ColumnDefinition Width="58*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="123,0,0,0"/>
-                <Image Width="200" Source="/Image/pearphoto.png" RenderTransformOrigin="0.485,1.1" Height="50" Grid.ColumnSpan="2" Margin="101,-18,35,102"/>
+                <Image Width="200" Source="/Image/pearphoto.png" RenderTransformOrigin="0.485,1.1" Height="50" Grid.ColumnSpan="2" Margin="101,-22,35,106"/>
                 <TextBlock Text="Selecciona una opción" 
                     FontSize="14" 
                     Foreground="#FF88887C" 
-                              Margin="142,67,56,48" Grid.ColumnSpan="2"
+                              Margin="136,67,62,48" Grid.ColumnSpan="2"
                               />
             </Grid>
 
@@ -311,7 +311,7 @@
                 FontSize="28" 
                 FontWeight="Light" 
                 Foreground="White" 
-                              Margin="95,23,77,60" Grid.Row="1"/>
+                              Margin="108,23,64,60" Grid.Row="1"/>
         </Grid>
 
     </Border>
